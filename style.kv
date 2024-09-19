@@ -1,5 +1,40 @@
 <WScreen>:
-    MDTopAppBar:
-        title: "MDTopAppBar"
-        left_action_items: [["menu", lambda x: app.callback()]]
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: "40"
+        MDTopAppBar:
+            title: "MDTopAppBar"
+            left_action_items: [["menu", lambda x: app.callback()]]
+        MDBoxLayout: 
+            spacing: "30"  
+            size_hint: 0.9, None
+            pos_hint: {'center_x': 0.5}
+            MDTextField:
+                hint_text: "Місто"
+                mode: "fill" 
+                color: "cyan"
+               
+            MDIconButton:
+                icon: "weather-partly-lightning"
+                icon_size: "32sp"
+                md_bg_color: app.theme_cls.primary_color
+                theme_icon_color: "Custom"
+                icon_color: "blue"
+        MDBoxLayout:
+            orientation: "vertical"
+            pos_hint: {'center_x': 0.5}
+            size_hint: 0.9, 0.4
+            MDLabel:
+                text: "Погода:"
+                color: "orange"
+
+                font_style: "H4"
+                haligh: "center"
+            MDLabel:
+                text: "14 градусів"
+                color: "orange"
+    
+                font_style: "H4"
+                haligh: "center"
+            
 
