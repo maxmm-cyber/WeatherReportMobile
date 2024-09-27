@@ -26,6 +26,14 @@ class WScreen(MDScreen):
         temp =  weather["main"]["temp"]
         self.ids.temp.text = f"{round(temp)}°C"
 
+        
+        
+
+        descr =  weather["weather"][0]["description"]
+        self.ids.descr.text = f"{descr}"
+
+
+
 class   WReportApp(MDApp):
     def build(self):
         Builder.load_file("style.kv")

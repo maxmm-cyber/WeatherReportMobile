@@ -25,9 +25,12 @@
                 icon_color: "orange"
 
         MDBoxLayout:
+            
+                
             orientation: "vertical"
-            pos_hint: {'center_x': 0.5}
-            size_hint: 0.9, 0.4
+            pos_hint: {'center_x': 0.5,"center_y": 0.5}
+            size_hint: 0.9, 0.9
+            padding: dp(20)
             MDLabel:
                 id: descr
                 text: "Ясно:"
@@ -39,8 +42,10 @@
                 id: temp
                 text: "14 градусів"
                 color: "orange"
-    
+        
                 font_style: "H4"
                 haligh: "center"
-            
+                vertical: "middle"
+                    
+                    
 
