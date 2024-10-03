@@ -13,7 +13,7 @@
                 id: city
                 hint_text: "Місто"
                 mode: "fill" 
-                color: "cyan"
+                color: "orange"
                
             MDIconButton:
                 id: search_btn
@@ -22,7 +22,7 @@
                 icon_size: "32sp"
                 md_bg_color: app.theme_cls.primary_color
                 theme_icon_color: "Custom"
-                icon_color: "orange"
+                icon_color: "cyan"
 
         MDBoxLayout:
             
@@ -31,19 +31,49 @@
             pos_hint: {'center_x': 0.5,"center_y": 0.5}
             size_hint: 0.9, 0.9
             padding: dp(20)
+            AsyncImage:
+                id: icon 
+                size: ("1500sp", "1500sp")
+                fit_mode: 'contain'
+                source: 'https://openweathermap.org/img/wn/10d@2x.png'
+                
             MDLabel:
                 id: descr
-                text: "Ясно:"
-                color: "orange"
+                text: "Погода:"
+                color: "cyan"
 
                 font_style: "H4"
                 haligh: "center"
             MDLabel:
                 id: temp
-                text: "14 градусів"
-                color: "orange"
+                text: "Температура:"
+                color: "cyan"
         
                 font_style: "H4"
+                haligh: "center"
+                vertical: "middle"
+            MDLabel:
+                id: feel
+                text: "Відчувається як:"
+                color: "cyan"
+        
+                font_style: "H6"
+                haligh: "center"
+                vertical: "middle"
+            MDLabel:
+                id: humidity
+                text: "Вологість:"
+                color: "cyan"
+        
+                font_style: "H6"
+                haligh: "center"
+                vertical: "middle"
+            MDLabel:
+                id: wind
+                text: "Вітер:"
+                color: "cyan"
+        
+                font_style: "H6"
                 haligh: "center"
                 vertical: "middle"
                     
