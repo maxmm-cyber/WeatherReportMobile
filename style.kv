@@ -36,19 +36,20 @@
                 size: ("1500sp", "1500sp")
                 fit_mode: 'contain'
                 source: 'https://openweathermap.org/img/wn/10d@2x.png'
+                pos_hint: {'center_x': 0.5,"center_y": 0.5}
                 
             MDLabel:
                 id: descr
                 text: "Погода:"
                 color: "cyan"
-
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
                 font_style: "H4"
                 haligh: "center"
             MDLabel:
                 id: temp
                 text: "Температура:"
                 color: "cyan"
-        
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
                 font_style: "H4"
                 haligh: "center"
                 vertical: "middle"
@@ -56,15 +57,16 @@
                 id: feel
                 text: "Відчувається як:"
                 color: "cyan"
-        
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
                 font_style: "H6"
                 haligh: "center"
+                
                 vertical: "middle"
             MDLabel:
                 id: humidity
                 text: "Вологість:"
                 color: "cyan"
-        
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
                 font_style: "H6"
                 haligh: "center"
                 vertical: "middle"
@@ -72,10 +74,36 @@
                 id: wind
                 text: "Вітер:"
                 color: "cyan"
-        
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
                 font_style: "H6"
                 haligh: "center"
                 vertical: "middle"
+            Widget:
+                size_hint_y:None
+                height: "50sp"
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
+        
+            MDFillRoundFlatButton:
+                text: "Прогноз погоди"
+                pos_hint: {'center_x': 0.4,"center_y": 0.5}
+                on_press: root.show_forecast()
+            
+            Widget:
+                size_hint_y:None
+                height: "50sp"
+                pos_hint:{'center_x': 0.8,"center_y": 0.5}
+        
                     
-                    
+<FScreen>:   
+    MDBoxLayout:
+        orientation:"vertical"  
+        spacing: "20sp"
+        MDTopAppBar:     
+            title:"Прогноз погоди"
+            left_action_items: [["arrow-left", lambda x: root.back()]]   
+    ScrollViev:
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.5}
+            size_hint: 0.9, 0.4     
 
