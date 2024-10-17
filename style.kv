@@ -33,7 +33,9 @@
             padding: dp(20)
             AsyncImage:
                 id: icon 
-                size: ("1500sp", "1500sp")
+                size_hint: None,None
+                size: ("80sp", "80sp")
+                pos_hint: {'center_x': 0.5}
                 fit_mode: 'contain'
                 source: 'https://openweathermap.org/img/wn/10d@2x.png'
                 pos_hint: {'center_x': 0.5,"center_y": 0.5}
@@ -101,9 +103,32 @@
         MDTopAppBar:     
             title:"Прогноз погоди"
             left_action_items: [["arrow-left", lambda x: root.back()]]   
-    ScrollViev:
-        MDBoxLayout:
-            orientation: 'vertical'
+        ScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5}
+                size_hint: 0.9, 0.9  
+                id: weather_list
+<WeatherCard>:
+    padding: 4
+    size_hint: 0.9, None
+    size_y: "100dp"
+    MDBoxLayout:
+        padding: 10
+        AsyncImage:
+            id: icon 
+            size_hint: None, None
+            size: ("50sp", "50sp")
             pos_hint: {'center_x': 0.5}
-            size_hint: 0.9, 0.4     
-
+            fit_mode: 'contain'
+            source: 'https://openweathermap.org/img/wn/10d@2x.png'
+        MDLabel:
+            id: temp
+            text: "14°C"
+            font_style: 'H6'
+            halign: 'center'
+        MDLabel:
+            id: descr
+            text: "Ясно "
+            font_style: 'H6'
+            halign: 'center'
